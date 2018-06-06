@@ -308,6 +308,15 @@ vcpkg_configure_cmake(
         -DWITH_VTK=${WITH_VTK}
         -DWITH_WEBP=${WITH_WEBP}
         -DWITH_ZLIB=${WITH_ZLIB}
+        -DENABLE_CXX11=ON
+        -DBUILD_opencv_python2=OFF 
+        -DWITH_CUDA=OFF 
+        -DBUILD_DOCS=OFF 
+        -DWITH_EIGEN=TRUE 
+        -DWITH_OPENMP=ON
+        -DWITH_OPENGL=ON
+        -DBUILD_JAVA=OFF 
+        -DBUILD_opencv_apps=OFF 
     OPTIONS_DEBUG
         -DINSTALL_HEADERS=OFF
         -DINSTALL_OTHER=OFF

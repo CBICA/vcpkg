@@ -34,7 +34,22 @@ vcpkg_configure_cmake(
         -DITK_USE_SYSTEM_TIFF=ON
         -DITK_USE_SYSTEM_ZLIB=ON
         -DITK_FORBID_DOWNLOADS=OFF
-
+        -DITK_BUILD_ALL_MODULES=ON 
+        -DModule_ITKReview=ON
+        -DModule_SkullStrip=ON
+        -DModule_TextureFeatures=ON
+        -DModule_RLEImage=ON
+        -DModule_IsotropicWavelets=ON
+        -DModule_PrincipalComponentsAnalysis=ON
+        -DVCL_INCLUDE_CXX_0X=ON
+        -DITK_USE_SYSTEM_DCMTK=ON
+        -DModule_ITKDCMTK=ON
+        -DModule_IOTransformDCMTK=ON
+        -DModule_ITKIODCMTK=ON
+        -DVCL_INCLUDE_CXX_0X=ON 
+        -DDCMTK_USE_ICU=OFF 
+        -DModule_ITKVideoBridgeOpenCV=ON
+        -DCMAKE_DEBUG_POSTFIX=d
         # I havn't tried Python wrapping in vcpkg
         #-DITK_WRAP_PYTHON=ON
         #-DITK_PYTHON_VERSION=3
@@ -45,7 +60,6 @@ vcpkg_configure_cmake(
         # -DModule_ITKVtkGlue=ON # this option requires VTK to be a dependency in CONTROL file. VTK depends on HDF5!
         -DModule_IOSTL=ON # example how to turn on a non-default module
         -DModule_MorphologicalContourInterpolation=ON # example how to turn on a remote module
-        -DModule_RLEImage=ON # example how to turn on a remote module
         ${ADDITIONAL_OPTIONS}
 )
 
