@@ -67,6 +67,12 @@ See a 4 minute [video demo](https://www.youtube.com/watch?v=y41WFKbQFTw).
 vcpkg export itk --zip # all customizations are in the ITK build in any case
 ```
 
+## Exporting Libraries
+
+```
+vcpkg export itk --zip # all customizations are in the ITK build in any case
+```
+
 ## Contributing
 Vcpkg is built with your contributions. Here are some ways you can contribute:
 
@@ -76,12 +82,6 @@ Vcpkg is built with your contributions. Here are some ways you can contribute:
 Please refer to our [Contribution guidelines](CONTRIBUTING.md) for more details.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Exporting Libraries
-
-```
-vcpkg export itk --zip # all customizations are in the ITK build in any case
-```
 
 ## License
 
