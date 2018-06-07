@@ -3,6 +3,8 @@
 ## Overview
 Vcpkg helps you manage C and C++ libraries on Windows, Linux and MacOS. This tool and ecosystem are currently in a preview state; your involvement is vital to its success!
 
+[CBICA NOTES]: This particular fork contains customized build recipes for ITK (which includes DCMTK, built separately), VTK and OpenCV. 
+
 For short description of available commands, run `vcpkg help`.
 
 ## Quick Start
@@ -14,7 +16,7 @@ Prerequisites:
 
 To get started:
 ```
-> git clone https://github.com/Microsoft/vcpkg
+> git clone https://github.com/CBICA/vcpkg
 > cd vcpkg
 
 PS> .\bootstrap-vcpkg.bat
@@ -42,6 +44,9 @@ For more information, see our [using a package](docs/examples/using-sqlite.md) e
 Additional notes on macOS and Linux support can be found in the [official announcement](https://blogs.msdn.microsoft.com/vcblog/2018/04/24/announcing-a-single-c-library-manager-for-linux-macos-and-windows-vcpkg/).
 
 ## Tab-Completion / Auto-Completion
+
+[CBICA NOTES]: FYI, this doesn't work on Windows machines imaged via UPHS.
+
 `vcpkg` supports auto-completion of commands, package names, options etc. To enable tab-completion in Powershell, use
 ```
 .\vcpkg integrate powershell
