@@ -1,7 +1,17 @@
 diff --git "a/CMake/dcmtkPrepare.cmake" "b/CMake/dcmtkPrepare.cmake"
---- a/CMake/dcmtkPrepare.cmake	2018-02-05 12:58:13.000000000 -0500
-+++ b/CMake/dcmtkPrepare.cmake	2018-04-25 15:07:12.927851000 -0400
-@@ -192,9 +192,9 @@
+index 40f4b30..e548927 100644
+--- "a/CMake/dcmtkPrepare.cmake""
++++ "b/CMake/dcmtkPrepare.cmake""
+@@ -91,7 +91,7 @@ IF(NOT WIN32)
+ ENDIF(NOT WIN32)
+ OPTION(DCMTK_ENABLE_PRIVATE_TAGS "Configure DCMTK with support for DICOM private tags coming with DCMTK." OFF)
+ OPTION(DCMTK_WITH_THREADS "Configure DCMTK with support for multi-threading." ON)
+-OPTION(DCMTK_WITH_DOXYGEN "Build API documentation with DOXYGEN." ON)
++OPTION(DCMTK_WITH_DOXYGEN "Build API documentation with DOXYGEN." OFF)
+ OPTION(DCMTK_GENERATE_DOXYGEN_TAGFILE "Generate a tag file with DOXYGEN." OFF)
+ OPTION(DCMTK_WIDE_CHAR_FILE_IO_FUNCTIONS "Build with wide char file I/O functions." OFF)
+ OPTION(DCMTK_WIDE_CHAR_MAIN_FUNCTION "Build command line tools with wide char main function." OFF)
+@@ -192,9 +192,9 @@ INCLUDE(GNUInstallDirs)
  # CMake's files (DCMTKTarget.cmake, DCMTKConfigVersion.cmake and DCMTKConfig.cmake) are installed
  # to different installation paths under Unix- and Windows-based systems
  IF(UNIX)
@@ -9,7 +19,7 @@ diff --git "a/CMake/dcmtkPrepare.cmake" "b/CMake/dcmtkPrepare.cmake"
 +  SET(DCMTK_INSTALL_CMKDIR "${CMAKE_INSTALL_LIBDIR}/share/dcmtk")
  ELSEIF(WIN32)
 -  SET(DCMTK_INSTALL_CMKDIR "cmake")
-+  SET(DCMTK_INSTALL_CMKDIR "share")
++  SET(DCMTK_INSTALL_CMKDIR "share/dcmtk")
  ENDIF(UNIX)
  
  #-----------------------------------------------------------------------------
