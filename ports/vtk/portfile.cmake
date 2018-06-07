@@ -90,6 +90,12 @@ if(VTK_WITH_QT)
         -DVTK_Group_Qt=ON
         -DVTK_QT_VERSION=5
         -DVTK_BUILD_QT_DESIGNER_PLUGIN=OFF
+        -DVTK_USE_QTCHARTS=ON
+        -DModule_vtkGUISupportQt=ON
+        -DVTK_USE_QVTK_QTOPENGL=ON
+        -DModule_vtkGUISupportQtWebkit=ON
+        -DModule_vtkRenderingQt=ON 
+        -DModule_vtkViewsQt=ON 
     )
 endif()
 
@@ -141,6 +147,8 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
     OPTIONS
+        -DVTK_USE_CXX11_FEATURES=ON
+        -DCMAKE_CXX_MP_FLAG=ON
         -DVTK_Group_Imaging=ON
         -DVTK_Group_Views=ON
         -DBUILD_TESTING=OFF
