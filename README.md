@@ -61,6 +61,12 @@ Our docs are now also available online at ReadTheDocs: <https://vcpkg.readthedoc
 
 See a 4 minute [video demo](https://www.youtube.com/watch?v=y41WFKbQFTw).
 
+## Exporting Libraries
+
+```
+vcpkg export itk --zip # all customizations are in the ITK build in any case
+```
+
 ## Contributing
 Vcpkg is built with your contributions. Here are some ways you can contribute:
 
