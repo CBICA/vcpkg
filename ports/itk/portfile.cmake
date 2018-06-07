@@ -29,8 +29,6 @@ vcpkg_configure_cmake(
         -DITK_INSTALL_DATA_DIR=share/itk/data
         -DITK_INSTALL_DOC_DIR=share/itk/doc
         -DITK_INSTALL_PACKAGE_DIR=share/itk
-        -DITK_LEGACY_REMOVE=ON
-        -DITK_FUTURE_LEGACY_REMOVE=ON
         -DITK_USE_64BITS_IDS=ON
         -DITK_USE_CONCEPT_CHECKING=ON
         #-DITK_USE_SYSTEM_LIBRARIES=ON # enables USE_SYSTEM for all third party libraries, some of which do not have vcpkg ports such as CastXML, SWIG, MINC etc
@@ -56,7 +54,6 @@ vcpkg_configure_cmake(
         -DVCL_INCLUDE_CXX_0X=ON 
         -DDCMTK_USE_ICU=OFF 
         -DModule_ITKVideoBridgeOpenCV=ON
-        -DCMAKE_DEBUG_POSTFIX=d
         -DModule_ITKVtkGlue=${Module_ITKVtkGlue}
         -DModule_LesionSizingToolkit=${Module_LesionSizingToolkit}
         # I havn't tried Python wrapping in vcpkg
@@ -67,7 +64,7 @@ vcpkg_configure_cmake(
         -DITK_USE_SYSTEM_HDF5=OFF # if ON, causes: ...\buildtrees\itk\x64-windows-static-rel\Modules\ThirdParty\HDF5\src\itk_H5Cpp.h(25): fatal error C1083: Cannot open include file: 'H5Cpp.h': No such file or directory
 
         # -DModule_ITKVtkGlue=ON # this option requires VTK to be a dependency in CONTROL file. VTK depends on HDF5!
-        -DModule_IOSTL=ON # example how to turn on a non-default module
+        #-DModule_IOSTL=ON # example how to turn on a non-default module
         -DModule_MorphologicalContourInterpolation=ON # example how to turn on a remote module
         ${ADDITIONAL_OPTIONS}
 )
