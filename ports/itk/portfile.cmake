@@ -8,6 +8,13 @@ vcpkg_from_github(
     HEAD_REF master
 )
 
+set(Module_ITKVtkGlue OFF)
+set(Module_LesionSizingToolkit OFF)
+if("vtk" IN_LIST FEATURES)
+  set(Module_ITKVtkGlue ON)
+  set(Module_LesionSizingToolkit ON)
+endif()
+
 # directory path length needs to be shorter than 50 characters
 file(RENAME ${SOURCE_PATH} ${CURRENT_BUILDTREES_DIR}/ITK)
 set(SOURCE_PATH "${CURRENT_BUILDTREES_DIR}/ITK")
@@ -50,6 +57,8 @@ vcpkg_configure_cmake(
         -DDCMTK_USE_ICU=OFF 
         -DModule_ITKVideoBridgeOpenCV=ON
         -DCMAKE_DEBUG_POSTFIX=d
+        -DModule_ITKVtkGlue=${Module_ITKVtkGlue}
+        -DModule_LesionSizingToolkit=${Module_LesionSizingToolkit}
         # I havn't tried Python wrapping in vcpkg
         #-DITK_WRAP_PYTHON=ON
         #-DITK_PYTHON_VERSION=3
