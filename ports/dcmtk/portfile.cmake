@@ -56,14 +56,14 @@ vcpkg_copy_pdbs()
 
 vcpkg_fixup_cmake_targets() # combines release and debug build configurations
 
-if(NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "debug")
-  file(READ ${CURRENT_PACKAGES_DIR}/debug/share/dcmtk/DCMTKTargets-debug.cmake DCMTK_CONFIG_LIB)
-  string(REPLACE "PREFIX}/lib"
-                 "PREFIX}/debug/lib" DCMTK_CONFIG_LIB "${DCMTK_CONFIG_LIB}")
-  string(REPLACE "PREFIX}/bin"
-                 "PREFIX}/debug/bin" DCMTK_CONFIG_LIB "${DCMTK_CONFIG_LIB}")
-  file(WRITE ${CURRENT_PACKAGES_DIR}/share/dcmtk/DCMTKTargets-debug.cmake "${DCMTK_CONFIG_LIB}")
-endif()
+#if(NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "debug")
+#  file(READ ${CURRENT_PACKAGES_DIR}/debug/share/dcmtk/DCMTKTargets-debug.cmake DCMTK_CONFIG_LIB)
+#  string(REPLACE "PREFIX}/lib"
+#                 "PREFIX}/debug/lib" DCMTK_CONFIG_LIB "${DCMTK_CONFIG_LIB}")
+#  string(REPLACE "PREFIX}/bin"
+#                 "PREFIX}/debug/bin" DCMTK_CONFIG_LIB "${DCMTK_CONFIG_LIB}")
+#  file(WRITE ${CURRENT_PACKAGES_DIR}/share/dcmtk/DCMTKTargets-debug.cmake "${DCMTK_CONFIG_LIB}")
+#endif()
 
 # the following lines should be called only after the cmake config has been built properly
 #file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/cmake)

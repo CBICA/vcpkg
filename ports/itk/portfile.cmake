@@ -8,12 +8,17 @@ vcpkg_from_github(
     HEAD_REF master
 )
 
+set(CMAKE_MODULE_PATH)
+
 set(Module_ITKVtkGlue OFF)
 set(Module_LesionSizingToolkit OFF)
 if("vtk" IN_LIST FEATURES)
+  list(APPEND CMAKE_MODULE_PATH ${CURRENT_INSTALLED_DIR}/share/vtk)
   set(Module_ITKVtkGlue ON)
   set(Module_LesionSizingToolkit ON)
 endif()
+
+list(APPEND CMAKE_MODULE_PATH ${CURRENT_INSTALLED_DIR}/share/dcmtk)
 
 # directory path length needs to be shorter than 50 characters
 file(RENAME ${SOURCE_PATH} ${CURRENT_BUILDTREES_DIR}/ITK)
