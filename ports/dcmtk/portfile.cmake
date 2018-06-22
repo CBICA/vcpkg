@@ -46,6 +46,7 @@ vcpkg_configure_cmake(
         -DBUILD_APPS=OFF
         -DDCMTK_ENABLE_CXX11=ON 
         -DCMAKE_DEBUG_POSTFIX=d
+        -DDCMTK_ENABLE_CHARSET_CONVERSION=<disabled>
     OPTIONS_DEBUG
         -DINSTALL_HEADERS=OFF
         -DINSTALL_OTHER=OFF

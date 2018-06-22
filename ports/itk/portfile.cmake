@@ -34,7 +34,7 @@ vcpkg_configure_cmake(
     OPTIONS
         -DBUILD_TESTING=OFF
         -DBUILD_EXAMPLES=OFF
-        -DITK_USE_GIT_PROTOCOL=OFF
+        -DITK_USE_GIT_PROTOCOL=ON
         -DITK_SKIP_PATH_LENGTH_CHECKS=ON
         -DDO_NOT_INSTALL_ITK_TEST_DRIVER=ON
         -DITK_INSTALL_DATA_DIR=share/itk/data
