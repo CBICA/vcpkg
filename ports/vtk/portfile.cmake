@@ -145,6 +145,7 @@ endif()
 # Configure & Install
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
+    DISABLE_PARALLEL_CONFIGURE
     PREFER_NINJA
     OPTIONS
         -DVTK_USE_CXX11_FEATURES=ON
