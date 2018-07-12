@@ -31,10 +31,11 @@ set(SOURCE_PATH "${ITK_BUILD_DIR}")
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
+    DISABLE_PARALLEL_CONFIGURE
     OPTIONS
         -DBUILD_TESTING=OFF
         -DBUILD_EXAMPLES=OFF
-        -DITK_USE_GIT_PROTOCOL=ON
+        -DITK_USE_GIT_PROTOCOL=OFF
         -DITK_SKIP_PATH_LENGTH_CHECKS=ON
         -DDO_NOT_INSTALL_ITK_TEST_DRIVER=ON
         -DITK_INSTALL_DATA_DIR=share/itk/data
@@ -52,7 +53,7 @@ vcpkg_configure_cmake(
         -DITK_USE_SYSTEM_TIFF=ON
         -DITK_USE_SYSTEM_ZLIB=ON
         -DITK_USE_SYSTEM_DCMTK=ON
-        -DITK_USE_SYSTEM_HDF5=ON
+        #-DITK_USE_SYSTEM_HDF5=ON
         -DITK_FORBID_DOWNLOADS=OFF
         -DVCL_INCLUDE_CXX_0X=ON 
         -DDCMTK_USE_ICU=OFF 
@@ -73,9 +74,8 @@ vcpkg_configure_cmake(
         #-DITK_PYTHON_VERSION=3
 
         # HDF5 must NOT be installed, otherwise it causes: ...\installed\x64-windows-static\include\H5Tpkg.h(25): fatal error C1189: #error:  "Do not include this file outside the H5T package!"
-        #-DITK_USE_SYSTEM_HDF5=OFF # if ON, causes: ...\buildtrees\itk\x64-windows-static-rel\Modules\ThirdParty\HDF5\src\itk_H5Cpp.h(25): fatal error C1083: Cannot open include file: 'H5Cpp.h': No such file or directory
+        -DITK_USE_SYSTEM_HDF5=OFF # if ON, causes: ...\buildtrees\itk\x64-windows-static-rel\Modules\ThirdParty\HDF5\src\itk_H5Cpp.h(25): fatal error C1083: Cannot open include file: 'H5Cpp.h': No such file or directory
 
-        # -DModule_ITKVtkGlue=ON # this option requires VTK to be a dependency in CONTROL file. VTK depends on HDF5!
         #-DModule_IOSTL=ON # example how to turn on a non-default module
         #-DModule_MorphologicalContourInterpolation=ON # example how to turn on a remote module
         ${ADDITIONAL_OPTIONS}
