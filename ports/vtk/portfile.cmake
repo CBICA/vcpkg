@@ -14,11 +14,11 @@ vcpkg_from_github(
 # =============================================================================
 # Options:
 
-if ("qt" IN_LIST FEATURES)
+#if ("qt" IN_LIST FEATURES)
     set(VTK_WITH_QT                      ON )
-else()
-    set(VTK_WITH_QT                      OFF )
-endif()
+#else()
+#    set(VTK_WITH_QT                      OFF )
+#endif()
 
 if ("mpi" IN_LIST FEATURES)
     set(VTK_WITH_MPI                     ON )
