@@ -151,7 +151,7 @@ if("ipp" IN_LIST FEATURES)
   endif()
 endif()
 
-set(WITH_QT OFF)
+set(WITH_QT ON)
 if("qt" IN_LIST FEATURES)
   set(WITH_QT ON)
 endif()
