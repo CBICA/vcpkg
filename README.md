@@ -3,7 +3,7 @@
 ## Overview
 Vcpkg helps you manage C and C++ libraries on Windows, Linux and MacOS. This tool and ecosystem are currently in a preview state; your involvement is vital to its success!
 
-[CBICA NOTES]: This particular fork contains customized build recipes for ITK (which includes DCMTK, built separately), VTK and OpenCV. 
+[CBICA NOTES]: This particular fork contains customized build recipes for ITK (which includes DCMTK, built separately), VTK and OpenCV. The assumption is that Open Source Qt (5.10.0-5.11.1) has been installed and available in PATH.
 
 For short description of available commands, run `vcpkg help`.
 
