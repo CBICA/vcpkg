@@ -10,6 +10,11 @@ vcpkg_from_github(
 
 set(CMAKE_MODULE_PATH)
 
+set(VCPKG_LIBRARY_LINKAGE static)
+if(PORT MATCHES "qt5-")
+    set(VCPKG_LIBRARY_LINKAGE dynamic)
+endif()
+
 set(Module_ITKVtkGlue OFF)
 set(Module_LesionSizingToolkit OFF)
 if("vtk" IN_LIST FEATURES)

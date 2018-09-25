@@ -26,6 +26,11 @@ string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "static" BUILD_WITH_STATIC_CRT)
 
 set(CMAKE_MODULE_PATH)
 
+set(VCPKG_LIBRARY_LINKAGE static)
+if(PORT MATCHES "qt5-")
+    set(VCPKG_LIBRARY_LINKAGE dynamic)
+endif()
+
 set(BUILD_opencv_dnn OFF)
 set(WITH_PROTOBUF OFF)
 if("dnn" IN_LIST FEATURES)
