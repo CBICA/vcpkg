@@ -19,6 +19,11 @@ vcpkg_configure_cmake(
 
 vcpkg_install_cmake()
 
+set(VCPKG_LIBRARY_LINKAGE static)
+if(PORT MATCHES "qt5-")
+    set(VCPKG_LIBRARY_LINKAGE dynamic)
+endif()
+
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug)
 
 file(READ "${CURRENT_PACKAGES_DIR}/share/eigen3/Eigen3Targets.cmake" EIGEN_TARGETS)
