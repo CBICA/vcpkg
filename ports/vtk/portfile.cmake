@@ -14,11 +14,11 @@ vcpkg_from_github(
 # =============================================================================
 # Options:
 
-#if ("qt" IN_LIST FEATURES)
+if ("qt" IN_LIST FEATURES)
     set(VTK_WITH_QT                      ON )
-#else()
-#    set(VTK_WITH_QT                      OFF )
-#endif()
+else()
+    set(VTK_WITH_QT                      OFF )
+endif()
 
 if ("mpi" IN_LIST FEATURES)
     set(VTK_WITH_MPI                     ON )
@@ -61,11 +61,11 @@ vcpkg_apply_patches(
         # Maybe in the future we can disable the patch and use the new version shipped with CMake
         # together with the hdf5-config.cmake that is written by HDF5 itself, but currently VTK
         # disables taking the config into account explicitly.
-        ${CMAKE_CURRENT_LIST_DIR}/use-fixed-find-hdf5.patch
+        #${CMAKE_CURRENT_LIST_DIR}/use-fixed-find-hdf5.patch
 
         # We disable a workaround in the VTK CMake scripts that can lead to the fact that a dependency
         # will link to both, the debug and the release library.
-        ${CMAKE_CURRENT_LIST_DIR}/disable-workaround-findhdf5.patch
+        #${CMAKE_CURRENT_LIST_DIR}/disable-workaround-findhdf5.patch
 
         ${CMAKE_CURRENT_LIST_DIR}/fix-find-libproj4.patch
         ${CMAKE_CURRENT_LIST_DIR}/fix-find-libharu.patch
@@ -81,7 +81,7 @@ vcpkg_apply_patches(
 file(REMOVE ${SOURCE_PATH}/CMake/FindGLEW.cmake)
 file(REMOVE ${SOURCE_PATH}/CMake/FindPythonLibs.cmake)
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/FindGDAL.cmake DESTINATION ${SOURCE_PATH}/CMake)
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/FindHDF5.cmake DESTINATION ${SOURCE_PATH}/CMake/NewCMake)
+#file(COPY ${CMAKE_CURRENT_LIST_DIR}/FindHDF5.cmake DESTINATION ${SOURCE_PATH}/CMake/NewCMake)
 
 # =============================================================================
 # Collect CMake options for optional components
@@ -160,6 +160,7 @@ vcpkg_configure_cmake(
         -DVTK_USE_SYSTEM_JPEG=ON
         -DVTK_USE_SYSTEM_GLEW=ON
         #-DVTK_USE_SYSTEM_HDF5=ON
+        -DVTK_USE_SYSTEM_HDF5=OFF
         -DVTK_USE_SYSTEM_JSONCPP=ON
         -DVTK_USE_SYSTEM_LIBPROJ4=ON
         -DVTK_USE_SYSTEM_LIBXML2=ON
@@ -329,10 +330,10 @@ set(VTK_TOOLS
     pvtkpython
 )
 
-file(READ "${CURRENT_PACKAGES_DIR}/share/vtk/Modules/vtkhdf5.cmake" _contents)
-string(REPLACE "vtk::hdf5::hdf5_hl" "" _contents "${_contents}")
-string(REPLACE "vtk::hdf5::hdf5" "" _contents "${_contents}")
-file(WRITE "${CURRENT_PACKAGES_DIR}/share/vtk/Modules/vtkhdf5.cmake" "${_contents}")
+#file(READ "${CURRENT_PACKAGES_DIR}/share/vtk/Modules/vtkhdf5.cmake" _contents)
+#string(REPLACE "vtk::hdf5::hdf5_hl" "" _contents "${_contents}")
+#string(REPLACE "vtk::hdf5::hdf5" "" _contents "${_contents}")
+#file(WRITE "${CURRENT_PACKAGES_DIR}/share/vtk/Modules/vtkhdf5.cmake" "${_contents}")
 
 foreach(TOOL_NAME IN LISTS VTK_TOOLS)
     _vtk_move_tool("${TOOL_NAME}")
