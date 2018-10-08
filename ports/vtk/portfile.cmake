@@ -98,7 +98,6 @@ if(VTK_WITH_QT)
         -DVTK_USE_QTCHARTS=ON
         -DModule_vtkGUISupportQt=ON
         -DVTK_USE_QVTK_QTOPENGL=ON
-        -DModule_vtkGUISupportQtWebkit=ON
         -DModule_vtkRenderingQt=ON 
         -DModule_vtkViewsQt=ON 
     )
